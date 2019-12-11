@@ -1,0 +1,89 @@
+body,
+html{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mesa{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: 70%;
+    background: beige;
+}
+
+.calculadora-wrapper{
+    width: 500px;
+    height: 600px;
+    background: #3f51b5;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    grid-row-gap: 40px;
+    border-radius: 10px;
+}
+
+.pantalla{
+    text-align: right;
+    padding-right: 1em;
+    background: #d9e8a5;
+    grid-column: 2 / span 10;
+    grid-row: 2;
+}
+
+/*====================================
+ Teclas
+=====================================*/
+.teclas{
+    grid-column: 2 / span 10;
+    grid-row: 3 / span 9;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+}
+
+.copy{
+    color: aliceblue;
+    font-size: 1.3rem;
+    font-weight: 100;
+    text-align: center;
+    grid-column: 1 / span 12;
+    grid-row: 12;
+    display: grid;
+}
+
+/*=================
+  Operaciones
+==================*/
+.extras{
+    grid-column: 10 / span 2;
+    grid-row: 1 / span 11;
+}
+
+/*========================
+  Números
+========================*/
+.numeros{
+    grid-column: 1 / span 9;
+    grid-row: 1 / span 11;
+}
+
+
+.teclas button{
+    float: left;
+    height: 100px;
+    width: 100px;
+
+}
+
+.zero{
+    width: 300px !important;
+}
