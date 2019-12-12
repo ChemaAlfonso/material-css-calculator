@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Chema Alfonso"> 
     <title>Calculadora</title>
 
     <link rel="stylesheet" href="styles.css">
@@ -11,40 +12,45 @@
 <body>
 
     <div class="mesa">
+        
         <div class="calculadora-wrapper">
+
             <div class="pantalla">
-                <button id="clearBtn">X</button>
-                <input type="number" value="123"> 
+                <button id="clearBtn" title="Limpiar">X</button>
+                <button class="operationBtn" value="Backspace" id="clearOneBtn" title="Borrar">→</button>
+                <input id="screenNumber" type="text" value="0"> 
             </div>
+
             <div class="teclas">
                 <div class="numeros">
-                    <button value="1">1</button>
-                    <button value="2">2</button>
-                    <button value="3">3</button>
-                    <button value="4">4</button>
-                    <button value="5">5</button>
-                    <button value="6">6</button>
-                    <button value="7">7</button>
-                    <button value="8">8</button>
-                    <button value="9">9</button>
-                    <button value="0">0</button>
-                    <button value=".">.</button>
-                    <button value="=" class="equal">=</button>
+                    <button class="numberBtn" value="7">7</button>
+                    <button class="numberBtn" value="8">8</button>
+                    <button class="numberBtn" value="9">9</button>
+                    <button class="numberBtn" value="4">4</button>
+                    <button class="numberBtn" value="5">5</button>
+                    <button class="numberBtn" value="6">6</button>
+                    <button class="numberBtn" value="1">1</button>
+                    <button class="numberBtn" value="2">2</button>
+                    <button class="numberBtn" value="3">3</button>
+                    <button class="numberBtn" value="0">0</button>
+                    <button class="numberBtn" value=".">.</button>
+                    <button class="operationBtn equal" value="=">=</button>
                 </div>
                 <div class="extras">
-                    <button value="+">+</button>
-                    <button value="-">-</button>
-                    <button value="X">X</button>
-                    <button value="/">/</button>
+                    <button class="operationBtn" value="+">+</button>
+                    <button class="operationBtn" value="-">-</button>
+                    <button class="operationBtn" value="*">X</button>
+                    <button class="operationBtn" value="/">/</button>
                 </div>
             </div>
 
-            <div class="copy">
-                <p>Calculator 3000 | 💻 Por Chema Alfonso</p>
-            </div>
         </div>
+
+        <div class="copy">
+            <p> {💻} <span>Chema Alfonso</span></p>
+        </div>
+
     </div>
-    
 
     <script src="app.js"></script>
 </body>

@@ -1,3 +1,13 @@
+:root{
+    --indigo: rgba(68, 105, 228, 0.603);
+    --pink: rgba(223, 64, 130, 0.603);
+    --dark-blue: rgba(11, 16, 34, 0.603);
+    --dark-shadow: rgb(23, 24, 24);
+    --screen-green: #d9e8a5;
+    --screen-blue: #a5c2e8;
+    --light: #fff;
+}
+
 *{
     box-sizing: border-box;
 }
@@ -15,25 +25,35 @@ body{
 }
 
 .mesa{
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 1000px;
     height: 700px;
-    background: beige;
-    border: 1px solid rgba(223, 64, 130, 0.603);
-    box-shadow: 0px 0px 5px rgba(223, 64, 130, 0.603)
+    background: var(--pink);
+    border: 1px solid var(--pink);
+    box-shadow: 0px 0px 5px var(--pink)
 }
 
 .calculadora-wrapper{
     width: 500px;
-    height: 600px;
+    height: 620px;
     background: #3f51b5;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(12, 1fr);
     grid-row-gap: 40px;
     border-radius: 10px;
+    box-shadow: 10px 10px 0px var(--indigo);
+    transition: all .5s;
+    transform: rotateZ(-15deg);
+    margin-right: 10em;
+}
+
+.calculadora-wrapper:hover{
+    transform: rotateZ(0);
+    margin-right: 0;
 }
 
 /*====================================
@@ -43,7 +63,7 @@ body{
     text-align: right;
     padding-left: 1em;
     padding-right: 1em;
-    background: #d9e8a5;
+    background: var(--screen-green);
     grid-column: 2 / span 10;
     grid-row: 2;
     display: flex;
@@ -56,7 +76,7 @@ body{
     border: none;
     width: 100%;
     padding: .6em;
-    line-height: 3em;
+    font-size: 1.6rem;
 }
 
 .pantalla button{
@@ -65,12 +85,12 @@ body{
     cursor: pointer;
     font-size: 1.5em;
     font-weight: 700;
-    color: rgb(230, 59, 59);
+    color: var(--pink);
+    transition: all .5s;
 }
 
 .pantalla button:hover{
-    background: rgb(230, 59, 59);
-    color: rgb(255, 255, 255);
+    transform: rotateZ(90deg);
 }
 
 /*====================================
@@ -85,28 +105,35 @@ body{
 }
 
 .copy{
+    position: absolute;
+    right: 1em;
+    bottom: .0em;
     color: aliceblue;
-    font-size: 1rem;
+    font-size: 1.3rem;
     font-weight: 100;
     text-align: center;
     grid-column: 1 / span 12;
     grid-row: 12;
     display: grid;
 }
+.copy span{
+    font-style: italic;
+}
 
 
 .teclas button{
     color: #fff;
-    font-size: 1.3rem;
+    font-size: 2rem;
     float: left;
     height: 100px;
     width: 100px;
     transition: all .3s;
     cursor: pointer;
+    margin-top: .1em;
 }
 
 .teclas button:hover{
-    background: rgba(213, 218, 236, 0.603);
+    color: var(--pink);
 }
 
 /*=================
@@ -118,11 +145,22 @@ body{
 }
 
 .extras button{
-    background: rgba(68, 105, 228, 0.603);
+    background: var(--pink);
     border: 1px solid transparent;
+    box-shadow: 1px 10px 2px var(--dark-shadow);
 }
 .extras button:hover{
-    background: rgba(223, 64, 130, 0.603);
+    color: var(--light);
+    box-shadow: 1px 0px 2px var(--dark-shadow);
+    transform: translateY(4px);
+}
+
+.equal{
+    background: var(--pink) !important;
+}
+
+.equal:hover{
+    color: var(--light) !important;
 }
 
 /*========================
@@ -134,19 +172,12 @@ body{
 }
 
 .numeros button{
-    background: rgba(11, 16, 34, 0.603);
+    background: var(--dark-blue);
     border: 1px solid transparent;
-    box-shadow: 0px 0px 3px rgba(236, 231, 231, 0.527);
+    box-shadow: 1px 10px 2px rgb(23, 24, 24);
 }
 
-.equal{
-    background: rgba(223, 64, 130, 0.603) !important;
-}
-
-.equal:hover{
-    background: rgba(218, 168, 188, 0.603) !important;
-}
-
-.mr-100{
-    margin-right: 100%;
+.numeros button:hover{
+    box-shadow: 1px 0px 2px rgb(23, 24, 24);
+    transform: translateY(4px);
 }
